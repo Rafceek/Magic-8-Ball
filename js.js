@@ -12,7 +12,7 @@ const randomAnswers = [
 	'Poważnie się zastanów!',
 	'Nigdy!!!',
 	'Śmiało!',
-	'Nie powinienieś tego robić',
+	'Nie powinienieś tego robić!',
 ]
 
 const shakeAnimation = () => {
@@ -23,6 +23,11 @@ const shakeAnimation = () => {
 	}
 
 	setTimeout(reset, 1200)
+}
+
+const randomAnswer = () => {
+	const random = Math.floor(Math.random() * 9)
+	answer.textContent = randomAnswers[random]
 }
 
 const inputCheck = () => {
@@ -36,6 +41,7 @@ const inputCheck = () => {
 	} else {
 		error.textContent = ''
 		shakeAnimation()
+		setTimeout(randomAnswer, 1000)
 	}
 }
 
